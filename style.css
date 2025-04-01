@@ -1,0 +1,23 @@
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+@keyframes bounceIn {
+    0% { transform: scale(0.8); opacity: 0; }
+    50% { transform: scale(1.1); opacity: 1; }
+    100% { transform: scale(1); }
+}
+
+.fade-in { animation: fadeIn 0.5s ease-in-out; }
+.bounce-in { animation: bounceIn 0.6s ease-in-out; }
+
+.bg-quiz { 
+    background-image: url('Assets/bg.png');
+    background-size: cover; 
+    background-position: center;
+}
+.bg-leaderboard { 
+    background-image: url('mmons/thumb/4/4e/Philippine_Tourism_Logo.svg/1200px-Philippine_Tourism_Logo.svg.png');
+    background-size: cover;
+    background-position: center;
+}

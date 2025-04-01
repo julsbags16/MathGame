@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Numeracy Quiz Game - Philippines Theme</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gradient-to-r from-yellow-200 via-red-200 to-blue-400 text-gray-800 min-h-screen flex flex-col items-center justify-center">
+    <!-- Username Entry -->
+    <section id="username-entry" class="min-h-screen flex flex-col items-center justify-center text-center p-5 fade-in">
+        <h1 class="text-4xl font-extrabold text-blue-600 mb-6 animate-pulse">Enter Your Name</h1>
+        <input type="text" id="username" placeholder="Your Name" class="px-4 py-2 text-lg border rounded-lg shadow-md mb-4">
+        <button onclick="selectDifficulty()" class="bg-blue-500 text-white px-8 py-4 rounded-lg text-lg hover:bg-blue-700 transition transform hover:scale-110">Start Quiz</button>
+    </section>
+
+    <!-- Difficulty Selection -->
+    <section id="difficulty-selection" class="hidden min-h-screen flex flex-col items-center justify-center text-center p-5 fade-in">
+        <h2 class="text-3xl font-extrabold text-yellow-600 mb-6">Choose Difficulty Level</h2>
+        <button onclick="startQuiz('easy')" class="bg-green-500 text-white px-8 py-4 rounded-lg text-lg hover:bg-green-700 transition transform hover:scale-110">Easy</button>
+        <button onclick="startQuiz('hard')" class="bg-red-500 text-white px-8 py-4 rounded-lg text-lg hover:bg-red-700 transition transform hover:scale-110 mt-4">Hard</button>
+    </section>
+
+    <!-- Quiz Page (Initially Hidden) -->
+    <section id="quiz" class="hidden bg-quiz min-h-screen flex flex-col items-center justify-center p-5 fade-in w-full">
+        <div class="bg-white shadow-xl rounded-lg p-6 max-w-lg w-full text-center">
+            <h2 class="text-3xl font-semibold text-blue-600 mb-4">Question <span id="question-number">1</span>/10</h2>
+            <p id="question-text" class="text-xl mb-6 font-medium"></p>
+            <div id="options" class="grid grid-cols-2 gap-4"></div>
+            <p id="timer" class="mt-4 text-red-500 font-bold">Time Left: <span id="time">30</span> seconds</p>
+            <img id="question-image" src="" alt="Question Image" class="mx-auto">
+            <div class="mt-4 flex justify-center gap-4">
+                <button onclick="pauseGame()" class="bg-yellow-500 text-white px-6 py-2 rounded-lg">Pause</button>
+                <button onclick="exitGame()" class="bg-red-500 text-white px-6 py-2 rounded-lg">Exit</button>
+                <button onclick="restartQuiz()" class="bg-green-500 text-white px-6 py-2 rounded-lg">Restart</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pause Section -->
+    <section id="pause-screen" class="hidden absolute inset-0 bg-gray-700 bg-opacity-50 flex flex-col items-center justify-center text-center">
+        <h2 class="text-4xl font-extrabold text-white mb-6">Game Paused</h2>
+        <button onclick="resumeGame()" class="bg-green-500 text-white px-8 py-4 rounded-lg text-lg hover:bg-green-700 transition transform hover:scale-110">Resume Game</button>
+        <button onclick="exitGame()" class="bg-red-500 text-white px-8 py-4 rounded-lg text-lg hover:bg-red-700 transition transform hover:scale-110 mt-4">Exit Game</button>
+    </section>
+
+    <!-- Results Page (Initially Hidden) -->
+    <section id="results" class="hidden min-h-screen flex flex-col items-center justify-center p-5 fade-in text-center">
+        <h2 class="text-4xl font-bold text-blue-600 mb-4">Quiz Completed!</h2>
+        <p id="score" class="text-2xl mb-6"></p>
+        <button onclick="viewLeaderboard()" class="bg-yellow-500 text-white px-8 py-4 rounded-lg text-lg hover:bg-yellow-700 transition transform hover:scale-110">View Leaderboard</button>
+        <button onclick="exitGame()" class="bg-green-500 text-white px-8 py-4 rounded-lg text-lg hover:bg-green-700 transition transform hover:scale-110 mt-4">Try Again</button>
+    </section>
+
+    <!-- Leaderboard Page (Initially Hidden) -->
+    <section id="leaderboard" class="hidden bg-leaderboard min-h-screen flex flex-col items-center justify-center text-center p-5 fade-in">
+        <h2 class="text-4xl font-bold text-blue-600 mb-4">Leaderboard</h2>
+        <div class="grid grid-cols-2 gap-8">
+            <!-- Easy Leaderboard Column -->
+            <div class="text-left">
+                <h3 class="text-2xl font-semibold text-green-600 mb-4">Easy Difficulty</h3>
+                <ul id="easy-leaderboard" class="text-lg font-medium"></ul>
+            </div>
+            <!-- Hard Leaderboard Column -->
+            <div class="text-left">
+                <h3 class="text-2xl font-semibold text-red-600 mb-4">Hard Difficulty</h3>
+                <ul id="hard-leaderboard" class="text-lg font-medium"></ul>
+            </div>
+        </div>
+        <button onclick="goBackToResults()" class="bg-blue-500 text-white px-8 py-4 rounded-lg text-lg hover:bg-blue-700 transition transform hover:scale-110">Back to Results</button>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
