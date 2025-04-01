@@ -17,9 +17,9 @@ let questionsEasy = [
 ];
 
 let questionsHard = [
-    { question: "If 3/4 of a chocolate bar weighs 100 grams, how much does the whole bar weigh?", answers: ["133.33 grams", "125 grams", "120 grams", "150 grams"], correct: 0, image: '' },
-    { question: "If a tree grows 2.5 meters every year, how many meters will it grow in 8 years?", answers: ["20 meters", "18 meters", "22 meters", "16 meters"], correct: 0, image: '' },
-    { question: "A bakery sells 20 cupcakes for ₱150. How much does one cupcake cost?", answers: ["₱7.50", "₱8", "₱9", "₱10"], correct: 0, image: '' },
+    { question: "If 3/4 of a chocolate bar weighs 100 grams, how much does the whole bar weigh?", answers: ["133.33 grams", "125 grams", "120 grams", "150 grams"], correct: 0, image: 'Assets/choco.jpg' },
+    { question: "If a tree grows 2.5 meters every year, how many meters will it grow in 8 years?", answers: ["20 meters", "18 meters", "22 meters", "16 meters"], correct: 0, image: 'Assets/tree.jpg' },
+    { question: "A bakery sells 20 cupcakes for ₱150. How much does one cupcake cost?", answers: ["₱7.50", "₱8", "₱9", "₱10"], correct: 0, image: 'Assets/' },
     { question: "If a jeepney travels 40 kilometers per hour, how long will it take to travel 150 kilometers?", answers: ["3.75 hours", "4 hours", "3 hours", "5 hours"], correct: 0, image: '' },
     { question: "A farmer harvested 350 mangoes. He sold 40%. How many mangoes did he sell?", answers: ["140", "150", "130", "120"], correct: 0, image: '' },
     { question: "Tom has ₱250. He buys 5 packs of candy costing ₱45 each. How much money does he have left?", answers: ["₱25", "₱50", "₱30", "₱35"], correct: 0, image: '' },
